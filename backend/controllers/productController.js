@@ -62,8 +62,36 @@ const deleteProduct = async (req, res) => {
   res.status(200).send("Product is deleted !");
 };
 
-// 6. get published product
+// 6. get product by colour
 
+const productsByColour = async (req, res) => {
+  reqColour = req.params.colour;
+  let products = await Product.findAll({ where: { colour: reqColour } });
+  res.status(200).send(products);
+};
+
+const productsByPrice = async (req, res) => {
+  priceRange = req.params.range;
+  console.log(priceRange);
+  if (priceRange == 1) {
+    let products = await Product.findAll({
+      where: { price: { $between: [1500, 4000] } },
+    });
+    res.status(200).send(products);
+  } else if (priceRange == 2) {
+    let products = await Product.findAll({
+      where: { price: { $between: [4000, 7000] } },
+    });
+    res.status(200).send(products);
+  } else if (priceRange == 3) {
+    let products = await Product.findAll({
+      where: { price: { $gte: 7000 } },
+    });
+    res.status(200).send(products);
+  } else {
+    res.status(404).send("Enter correct range");
+  }
+};
 
 // 7. connect one to many relation Product and Reviews
 
@@ -117,4 +145,6 @@ module.exports = {
   deleteProduct,
   getProductReviews,
   upload,
+  productsByColour,
+  productsByPrice,
 };

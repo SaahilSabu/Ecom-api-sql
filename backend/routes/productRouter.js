@@ -21,6 +21,8 @@ router.get("/review/:id", reviewController.review);
 
 // Products router
 router.get("/:id", productController.getOneProduct);
+router.get("/colour/:colour", productController.productsByColour);
+router.get("/price/:range", productController.productsByPrice);
 
 router.put("/:id", productController.updateProduct);
 
