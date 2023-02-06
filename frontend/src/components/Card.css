@@ -1,0 +1,35 @@
+body {
+  padding: 10px 0;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 5px;
+  align-items: stretch;
+  margin: 10px;
+}
+
+.card > article {
+  border: 1px solid #ccc;
+}
+
+.card > article img {
+  width: 100%;
+}
+
+.card .text {
+  padding: 0 10px;
+  margin: 0;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card_footer {
+  display: flex;
+  padding: 0 5px;
+  margin: 0;
+  justify-content: space-between;
+}

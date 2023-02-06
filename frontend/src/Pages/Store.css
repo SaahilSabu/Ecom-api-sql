@@ -1,0 +1,53 @@
+.divider {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sections {
+  border: 1px solid grey;
+  padding: 1rem;
+  margin: 2rem;
+  width: 20vw;
+}
+
+.shoes {
+  flex: 2;
+}
+
+.section_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter_checkbox {
+  display: flex;
+  padding: 0 0.2rem;
+  margin: 0;
+}
+
+.button {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.cart_body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85%;
+}
+
+.section_card {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  /* flex-wrap: wrap; */
+  width: 100%;
+}
+
+.colour_container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

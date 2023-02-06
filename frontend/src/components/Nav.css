@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vw;
+}
+
+ul.nav {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+}
+
+li.nav {
+  padding: 1vw;
+}
+
+img {
+  width: 5vw;
+}
