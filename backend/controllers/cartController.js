@@ -27,7 +27,14 @@ const getAllCarts = async (req, res) => {
   res.status(200).send(cart);
 };
 
+const getUserCart = async (req, res) => {
+  const user_id = req.params.user_id;
+  const cart = await Cart.findAll({ where: { user_id: user_id } });
+  res.status(200).send(cart);
+};
+
 module.exports = {
   addCart,
   getAllCarts,
+  getUserCart,
 };

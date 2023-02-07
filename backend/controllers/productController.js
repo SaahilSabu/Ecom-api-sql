@@ -16,6 +16,7 @@ const addProduct = async (req, res) => {
   let info = {
     title: req.body.title,
     price: req.body.price,
+    image: req.body.image,
     description: req.body.description,
     colour: req.body.colour,
     typeOfShoe: req.body.typeOfShoe,
@@ -69,6 +70,13 @@ const productsByColour = async (req, res) => {
   let products = await Product.findAll({ where: { colour: reqColour } });
   res.status(200).send(products);
 };
+const productsByTypeOfShoe = async (req, res) => {
+  reqTypeOfShoe = req.params.typeOfShoe;
+  let products = await Product.findAll({
+    where: { typeOfShoe: reqTypeOfShoe },
+  });
+  res.status(200).send(products);
+};
 
 const productsByPrice = async (req, res) => {
   priceRange = req.params.range;
@@ -111,32 +119,6 @@ const getProductReviews = async (req, res) => {
   res.status(200).send(data);
 };
 
-// 8. Upload Image Controller
-
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "Images");
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname));
-  },
-});
-
-const upload = multer({
-  storage: storage,
-  limits: { fileSize: "1000000" },
-  fileFilter: (req, file, cb) => {
-    const fileTypes = /jpeg|jpg|png|gif/;
-    const mimeType = fileTypes.test(file.mimetype);
-    const extname = fileTypes.test(path.extname(file.originalname));
-
-    if (mimeType && extname) {
-      return cb(null, true);
-    }
-    cb("Give proper files formate to upload");
-  },
-}).single("image");
-
 module.exports = {
   addProduct,
   getAllProducts,
@@ -144,7 +126,7 @@ module.exports = {
   updateProduct,
   deleteProduct,
   getProductReviews,
-  upload,
   productsByColour,
-  productsByPrice,
+  productsByTypeOfShoe,
+  // productsByPrice,
 };

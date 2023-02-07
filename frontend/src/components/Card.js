@@ -23,7 +23,7 @@ const Card = ({ product }) => {
   return (
     <main class="card">
       <article>
-        <img src="https://picsum.photos/600/400?image=1015" alt="Sample" />
+        <img src={product.image} alt="Sample" />
         <div class="text">
           <h3>{product.title}</h3>
           <div className="card_footer">

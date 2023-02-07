@@ -4,14 +4,16 @@
   padding: 2vw;
 }
 
-ul.nav {
+.nav_ul {
   text-decoration: none;
   list-style: none;
   display: flex;
 }
 
-li.nav {
+.link {
+  text-decoration: none;
   padding: 1vw;
+  color: black;
 }
 
 img {

@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./Nav.css";
 const Nav = () => {
   return (
@@ -7,12 +9,22 @@ const Nav = () => {
         <img src="assets/websitelogo.png" alt="" />
       </div>
       <div>
-        <ul className="nav">
-          <li className="nav">Home</li>
-          <li className="nav">The Journey</li>
-          <li className="nav">Team</li>
-          <li className="nav">Store</li>
-          <li className="nav">Contact</li>
+        <ul className="nav nav_ul">
+          <Link to="/" className="link">
+            HOME
+          </Link>
+          <Link to="/" className="link">
+            THE JOURNEY
+          </Link>
+          <Link to="/team" className="link">
+            TEAM
+          </Link>
+          <Link to="/store" className="link">
+            STORE
+          </Link>
+          <Link to="/contact" className="link">
+            CONTACT
+          </Link>
         </ul>
       </div>
       <div>

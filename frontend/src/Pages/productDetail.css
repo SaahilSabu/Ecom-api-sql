@@ -1,0 +1,41 @@
+.divider {
+  display: flex;
+  justify-content: space-between;
+}
+
+.p-container {
+  border: 1px solid grey;
+  padding: 1rem;
+  margin: 2rem;
+  width: 20vw;
+  flex: 3;
+}
+
+.content_div {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.p_img {
+  padding: 2rem;
+  width: 30vw;
+}
+.p_content {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.p_hero {
+  display: flex;
+  flex-direction: column;
+}
+.p_hero span {
+  padding: 0.5rem 1rem;
+}
+
+.p_qty{
+    display: flex;
+}
